@@ -11,7 +11,7 @@ def call(Map pipelineParams) {
   def dockerRegistryPassword = pipelineParams.dockerRegistryPassword ?: ''
 
   // Define the Docker build command
-  def dockerBuildCmd = "docker build -t ${dockerImageName}:${dockerImageTag} -f ${dockerfilePath} ${buildArgs} ."
+  def dockerBuildCmd = "docker build -t krvnb/${dockerImageName}:${dockerImageTag} -f ${dockerfilePath} ${buildArgs} ."
 
   // Log the Docker build command to the Jenkins console
   echo "Building Docker image: ${dockerBuildCmd}"
