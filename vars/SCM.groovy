@@ -1,6 +1,6 @@
 def VERSION = 'rohitkothapalli'
 def call(String scmUrl) {
     stage('Checkout') {
-        checkout([$class: 'GitSCM', branches: [[name: '*/*']], userRemoteConfigs: [[url: scmUrl]]])
+        checkout([$class: 'GitSCM', branches: [[name: 'rohitkothapalli']], userRemoteConfigs: [[url: scmUrl]]])
     }
 }
