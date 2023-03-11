@@ -7,5 +7,6 @@ def call(Map config = [:]) {
 
   sh "kubectl create ns ${namespace}"
   sh "kubectl apply -f ${yamlFilePath} -n ${namespace}"
+  sh "kubectl get pods"
 
 }
