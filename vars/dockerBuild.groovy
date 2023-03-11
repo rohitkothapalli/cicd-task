@@ -24,7 +24,7 @@ def call(Map pipelineParams) {
   echo "Pushing Docker image: ${dockerPushCmd}"
 
   // Execute the Docker push command
-  withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'DOCKER_REGISTRY_PASSWORD', usernameVariable: 'DOCKER_REGISTRY_USERNAME')]) {
+  withCredentials([usernamePassword(passwordVariable: 'DOCKER_REGISTRY_PASSWORD', usernameVariable: 'DOCKER_REGISTRY_USERNAME')]) {
     sh """
       docker login ${dockerRegistryUrl} -u ${dockerRegistryUsername} -p ${DOCKER_REGISTRY_PASSWORD}
       ${dockerPushCmd}
