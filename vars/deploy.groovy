@@ -8,6 +8,6 @@ def call(Map config = [:]) {
   sh "kubectl create ns ${namespace}"
   sh "kubectl apply -f ${yamlFilePath} -n ${namespace}"
   sh "kubens cicdtask"
-  sh "kubectl get pods -w"
+  sh "kubectl get pods "
 
 }
