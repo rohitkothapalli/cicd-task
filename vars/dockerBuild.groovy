@@ -20,7 +20,7 @@ def call(Map pipelineParams) {
   sh "${dockerBuildCmd}"
 
   // Log the Docker push command to the Jenkins console
-  def dockerPushCmd = "docker push ${dockerImageName}:${dockerImageTag} "
+  def dockerPushCmd = "docker push krvnb/${dockerImageName}:${dockerImageTag} "
   echo "Pushing Docker image: ${dockerPushCmd}"
 
   // Execute the Docker push command
