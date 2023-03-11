@@ -17,7 +17,7 @@ def call(String scmType, String scmUrl) {
 
 def checkoutGit(String scmUrl) {
     stage('Checkout (Git)') {
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: scmUrl]]])
+        checkout([$class: 'GitSCM', branches: [[name: '*/*']], userRemoteConfigs: [[url: scmUrl]]])
     }
 }
 
