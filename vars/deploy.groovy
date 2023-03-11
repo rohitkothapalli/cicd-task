@@ -5,6 +5,7 @@ def call(Map config = [:]) {
   def yamlFilePath = config.yamlFilePath
   def labels = config.labels ?: [:]
 
+  sh "kubectl create ns ${namespace}"
   sh "kubectl apply -f ${yamlFilePath} -n ${namespace}"
 
 }
