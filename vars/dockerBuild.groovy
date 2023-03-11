@@ -6,7 +6,7 @@ def call(Map pipelineParams) {
   def buildArgs = pipelineParams.buildArgs ?: ''
   def dockerImageName = pipelineParams.dockerImageName ?: 'my-docker-image'
   def dockerImageTag = pipelineParams.dockerImageTag ?: 'latest'
-  def dockerRegistryUrl = pipelineParams.dockerRegistryUrl ?: 'hub.docker.com'
+  def dockerRegistryUrl = pipelineParams.dockerRegistryUrl ?: 'docker.io'
   def dockerRegistryUsername = pipelineParams.dockerRegistryUsername ?: ''
   def dockerRegistryPassword = pipelineParams.dockerRegistryPassword ?: ''
 
