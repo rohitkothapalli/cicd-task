@@ -11,7 +11,7 @@ def call(Map pipelineParams) {
   def dockerRegistryPassword = pipelineParams.dockerRegistryPassword ?: ''
 
 
-  def dockerBuildCmd = "docker build -t krvnb/${dockerImageName}:${dockerImageTag} -f ${dockerfilePath} ."
+  def dockerBuildCmd = "docker build -t krvnb/${dockerImageName}:${dockerImageTag} -f ${dockerfilePath} "
 
   echo "Building Docker image: ${dockerBuildCmd}"
 
