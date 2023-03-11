@@ -4,7 +4,7 @@ def call(Map pipelineParams) {
   def buildArgs = pipelineParams.buildArgs ?: ''
   def dockerImageName = pipelineParams.dockerImageName ?: 'my-docker-image'
   def dockerImageTag = pipelineParams.dockerImageTag ?: 'latest'
-  def dockerRegistryUrl = pipelineParams.dockerRegistryUrl ?: 'docker.io'
+  def dockerRegistryUrl = pipelineParams.dockerRegistryUrl ?: 'https://hub.docker.com/'
   def dockerRegistryUsername = pipelineParams.dockerRegistryUsername ?: 'krvnb'
   def dockerRegistryPassword = pipelineParams.dockerRegistryPassword ?: 'RohiT.123'
 
@@ -18,7 +18,7 @@ def call(Map pipelineParams) {
   def dockerPushCmd = "docker push ${dockerImageName}:${dockerImageTag}"
   echo "Pushing Docker image: ${dockerPushCmd}"
 
-  withCredentials([usernamePassword(credentialsId: 'krvnb', passwordVariable: 'DOCKER_REGISTRY_PASSWORD', usernameVariable: 'DOCKER_REGISTRY_USERNAME')]) {
+  withCredentials([usernamePassword(passwordVariable: 'DOCKER_REGISTRY_PASSWORD', usernameVariable: 'DOCKER_REGISTRY_USERNAME')]) {
     sh """
       docker login ${dockerRegistryUrl} -u ${dockerRegistryUsername} -p ${DOCKER_REGISTRY_PASSWORD}
       ${dockerPushCmd}
