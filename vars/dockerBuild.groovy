@@ -7,8 +7,8 @@ def call(Map pipelineParams) {
   def dockerImageName = pipelineParams.dockerImageName ?: 'my-docker-image'
   def dockerImageTag = pipelineParams.dockerImageTag ?: 'latest'
   def dockerRegistryUrl = pipelineParams.dockerRegistryUrl ?: 'https://registry.hub.docker.com'
-  def dockerRegistryUsername = pipelineParams.dockerRegistryUsername ?: ''
-  def dockerRegistryPassword = pipelineParams.dockerRegistryPassword ?: ''
+  def dockerRegistryUsername = pipelineParams.dockerRegistryUsername ?: 'krvnb'
+  def dockerRegistryPassword = pipelineParams.dockerRegistryPassword ?: 'RohiT.123'
 
   // Define the Docker build command
   def dockerBuildCmd = "docker build -t ${dockerImageName}:${dockerImageTag} -f ${dockerfilePath} ${buildArgs} ."
