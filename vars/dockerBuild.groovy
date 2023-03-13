@@ -3,7 +3,6 @@ def VERSION = 'rohitkothapalli'
 def call(Map pipelineParams) {
   
   def dockerfilePath = pipelineParams.dockerfilePath ?: '/Users/krvnbangarraju/.jenkins/workspace/cicd-task/Dockerfile'
-//   def buildArgs = pipelineParams.buildArgs ?: ''
   def dockerImageName = pipelineParams.dockerImageName ?: 'my-docker-image'
   def dockerImageTag = pipelineParams.dockerImageTag ?: 'latest'
   def dockerRegistryUrl = pipelineParams.dockerRegistryUrl ?: 'docker.io'
