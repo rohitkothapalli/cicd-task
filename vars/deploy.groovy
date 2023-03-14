@@ -5,7 +5,7 @@ def call(Map config = [:]) {
   def yamlFilePath = config.yamlFilePath
  
 
-  sh "kubectl create ns ${namespace}"
+ 
   sh "kubectl apply -f ${yamlFilePath} -n ${namespace}"
   sh "kubens cicdtask"
   sh "kubectl get pods "
